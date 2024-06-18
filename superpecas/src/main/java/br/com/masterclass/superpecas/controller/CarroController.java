@@ -5,14 +5,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-
 @RequestMapping("/carro")
 
 public class CarroController {
 
-
     @RequestMapping(value = "/", method = RequestMethod.GET)
-
     public String buscaCarro() {
 
         return "Agora funcionou namoral!";

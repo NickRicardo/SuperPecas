@@ -1,6 +1,5 @@
 package br.com.masterclass.superpecas.repository;
 
-import br.com.masterclass.superpecas.model.CarroModel;
 import br.com.masterclass.superpecas.model.PecaModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 

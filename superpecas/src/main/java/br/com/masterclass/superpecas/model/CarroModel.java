@@ -3,6 +3,7 @@ package br.com.masterclass.superpecas.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "carros")
 public class CarroModel {
 
     @Id

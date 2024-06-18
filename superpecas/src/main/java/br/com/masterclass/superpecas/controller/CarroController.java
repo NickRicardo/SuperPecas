@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/carro")
@@ -21,5 +22,13 @@ public class CarroController {
         return carroService.ListarTodos();
     }
 
+    @GetMapping("/{carro_id}")
+    public Optional<CarroModel> obterPorId(@PathVariable int carro_id){
+        return carroService.ObterPorId(carro_id);
+    }
 
+    @GetMapping("/ListarTodosFabricantes")
+    public List<CarroModel> listarTodosFabricantes (@RequestParam("fabricante") String fabricante){
+        return carroService.listarTodosFabricantes(fabricante);
+    }
 }

@@ -24,16 +24,15 @@ public class CarroController {
         return carroService.ListarTodos();
     }
 
-    @GetMapping("/{carro_id}")
-    public Optional<CarroModel> obterPorId(@PathVariable int carro_id) {
-        return carroService.ObterPorId(carro_id);
+    @GetMapping("/{carroID}")
+    public Optional<CarroModel> obterPorId(@PathVariable int carroID) {
+        return carroService.ObterPorId(carroID);
     }
 
     @GetMapping("/ListarTodosFabricantes")
     public List<String> listarTodosFabricantes() {
         return carroService.listarTodosFabricantes();
     }
-
 
     @DeleteMapping("/{carro_id}")
     public void excluirCarro(@PathVariable Integer carro_id){
@@ -45,6 +44,5 @@ public class CarroController {
         this.carroService.criaCarro(carroDTO);
         return  ResponseEntity.status(HttpStatus.CREATED).body("Carro Adicionado com Sucesso!");
     }
-
 
 }

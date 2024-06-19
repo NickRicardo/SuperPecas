@@ -3,12 +3,13 @@ package br.com.masterclass.superpecas.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "pecas")
 public class PecaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "peca_id")
-    private int peca_id;
+    @Column(name = "pecaID")
+    private int pecaID;
 
     @Column(name = "nome", nullable = false)
     private String nome;
@@ -16,21 +17,21 @@ public class PecaModel {
     @Column(name = "descricao", nullable = false)
     private String descricao;
 
-    @Column(name = "numero_serie", nullable = false)
-    private String numero_serie;
+    @Column(name = "numeroSerie", nullable = false)
+    private String numeroSerie;
 
     @Column(name = "fabricante", nullable = false)
     private String fabricante;
 
-    @Column(name = "modelo_carro", nullable = false)
-    private String modelo_carro;
+    @Column(name = "modeloCarro", nullable = false)
+    private String modeloCarro;
 
-    public int getPeca_id() {
-        return peca_id;
+    public int getPecaID() {
+        return pecaID;
     }
 
-    public void setPeca_id(int peca_id) {
-        this.peca_id = peca_id;
+    public void setPecaID(int pecaID) {
+        this.pecaID = pecaID;
     }
 
     public String getNome() {
@@ -49,12 +50,12 @@ public class PecaModel {
         this.descricao = descricao;
     }
 
-    public String getNumero_serie() {
-        return numero_serie;
+    public String getNumeroSerie() {
+        return numeroSerie;
     }
 
-    public void setNumero_serie(String numero_serie) {
-        this.numero_serie = numero_serie;
+    public void setNumeroSerie(String numeroSerie) {
+        this.numeroSerie = numeroSerie;
     }
 
     public String getFabricante() {
@@ -65,11 +66,11 @@ public class PecaModel {
         this.fabricante = fabricante;
     }
 
-    public String getModelo_carro() {
-        return modelo_carro;
+    public String getModeloCarro() {
+        return modeloCarro;
     }
 
-    public void setModelo_carro(String modelo_carro) {
-        this.modelo_carro = modelo_carro;
+    public void setModeloCarro(String modeloCarro) {
+        this.modeloCarro = modeloCarro;
     }
 }

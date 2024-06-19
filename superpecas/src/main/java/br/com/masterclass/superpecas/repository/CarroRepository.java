@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface CarroRepository extends JpaRepository<CarroModel, Integer> {
 
-    @Query("SELECT DISTINCT c.fabricante FROM CarroModel c")
+    @Query("SELECT DISTINCT fabricante FROM CarroModel")
     List<String> listarTodosFabricantes();
 
     List<CarroModel> findByNomeModeloOrCodigoUnico(String nomeModelo, String codigoUnico);

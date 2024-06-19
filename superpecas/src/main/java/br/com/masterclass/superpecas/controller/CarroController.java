@@ -1,8 +1,11 @@
 package br.com.masterclass.superpecas.controller;
 
+import br.com.masterclass.superpecas.dto.CarroCriarDTO;
 import br.com.masterclass.superpecas.model.CarroModel;
 import br.com.masterclass.superpecas.service.CarroService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,4 +33,18 @@ public class CarroController {
     public List<String> listarTodosFabricantes() {
         return carroService.listarTodosFabricantes();
     }
+
+
+    @DeleteMapping("/{carro_id}")
+    public void excluirCarro(@PathVariable Integer carro_id){
+        carroService.excluirCarro(carro_id);
+    }
+
+    @PostMapping("/criarNovoCarro")
+    public ResponseEntity<String> criaNovoCarro(@RequestBody CarroCriarDTO carroDTO){
+        this.carroService.criaCarro(carroDTO);
+        return  ResponseEntity.status(HttpStatus.CREATED).body("Carro Adicionado com Sucesso!");
+    }
+
+
 }

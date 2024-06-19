@@ -1,6 +1,10 @@
 package br.com.masterclass.superpecas.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "carros")
@@ -8,32 +12,36 @@ public class CarroModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "carro_id")
-    private int carro_id;
+    @Column(name = "CarroID")
+    private Integer carroID;
 
-    @Column(name = "nome_modelo", nullable = false)
-    private String nome_modelo;
+    @Column(name = "NomeModelo", nullable = false)
+    private String nomeModelo;
 
-    @Column(name = "fabricante", nullable = false)
+    @Column(name = "Fabricante", nullable = false)
     private String fabricante;
 
-    @Column(name = "codigo_unico", nullable = false)
-    private String codigo_unico;
+    @Column(name = "CodigoUnico", nullable = false, unique = true)
+    private String codigoUnico;
 
-    public int getCarro_id() {
-        return carro_id;
+    public Integer getCarroID() {
+        return carroID;
     }
 
-    public void setCarro_id(int carro_id) {
-        this.carro_id = carro_id;
+//    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+//    @OneToMany(mappedBy = "carro", fetch = FetchType.LAZY)
+//    private Set<PecasModel> pecas = new HashSet<>();
+
+    public void setCarroID(Integer carroID) {
+        this.carroID = carroID;
     }
 
-    public String getNome_modelo() {
-        return nome_modelo;
+    public String getNomeModelo() {
+        return nomeModelo;
     }
 
-    public void setNome_modelo(String nome_modelo) {
-        this.nome_modelo = nome_modelo;
+    public void setNomeModelo(String nomeModelo) {
+        this.nomeModelo = nomeModelo;
     }
 
     public String getFabricante() {
@@ -44,11 +52,11 @@ public class CarroModel {
         this.fabricante = fabricante;
     }
 
-    public String getCodigo_unico() {
-        return codigo_unico;
+    public String getCodigoUnico() {
+        return codigoUnico;
     }
 
-    public void setCodigo_unico(String codigo_unico) {
-        this.codigo_unico = codigo_unico;
+    public void setCodigoUnico(String codigoUnico) {
+        this.codigoUnico = codigoUnico;
     }
 }

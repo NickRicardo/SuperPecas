@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface CarroRepository extends JpaRepository<CarroModel, Integer> {
 
-    @Query("SELECT c FROM CarroModel c WHERE c.fabricante = :fabricante")
-    List<CarroModel> listarTodosFabricantes(@Param("fabricante") String fabricante);
+    @Query("SELECT c FROM Carro c WHERE c.fabricante = ?1")
+    List<CarroModel> listarTodosFabricantes(@Param("?1") String fabricante);
 
 }

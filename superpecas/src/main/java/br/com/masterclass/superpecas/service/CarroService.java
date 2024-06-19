@@ -22,7 +22,7 @@ public class CarroService {
         return carroRepository.findById(carro_id);
     }
 
-    public List<CarroModel> listarTodosFabricantes(String fabricante){
-        return carroRepository.listarTodosFabricantes(fabricante);
+    public List<String> listarTodosFabricantes() {
+        return carroRepository.listarTodosFabricantes();
     }
 }

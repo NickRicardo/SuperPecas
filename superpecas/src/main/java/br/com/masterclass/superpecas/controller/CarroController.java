@@ -13,7 +13,6 @@ import java.util.Optional;
 @CrossOrigin("*")
 public class CarroController {
 
-
     @Autowired
     private CarroService carroService;
 
@@ -23,12 +22,12 @@ public class CarroController {
     }
 
     @GetMapping("/{carro_id}")
-    public Optional<CarroModel> obterPorId(@PathVariable int carro_id){
+    public Optional<CarroModel> obterPorId(@PathVariable int carro_id) {
         return carroService.ObterPorId(carro_id);
     }
 
     @GetMapping("/ListarTodosFabricantes")
-    public List<CarroModel> listarTodosFabricantes (@RequestParam("fabricante") String fabricante){
-        return carroService.listarTodosFabricantes(fabricante);
+    public List<String> listarTodosFabricantes() {
+        return carroService.listarTodosFabricantes();
     }
 }
